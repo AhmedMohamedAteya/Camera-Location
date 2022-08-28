@@ -161,18 +161,4 @@ class MainActivity : AppCompatActivity() {
             getLocation()
         }
     }
-    private fun getAddress(latitude: Double, longitude: Double): String {
-        val geocoder = Geocoder(this, Locale.getDefault())
-        val addresses: List<Address>?
-        val address: Address?
-        var addressText = ""
-
-        addresses = geocoder.getFromLocation(latitude, longitude, 1)
-
-        if (addresses.isNotEmpty()) {
-            address = addresses[0]
-            addressText = address.getAddressLine(0)
-        }
-        return addressText
-    }
 }
